@@ -31,7 +31,7 @@ public class Frame extends JFrame{
 		
 		JPanel inputPanel = new JPanel();
 		
-		JLabel yearTextLabel = new JLabel("지역명 : "); 
+		JLabel yearTextLabel = new JLabel("연도명 : "); 
 		yearText = new JTextField(20);
 		
 		JButton btn1 = new JButton("확인");
