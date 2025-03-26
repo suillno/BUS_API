@@ -34,7 +34,7 @@ public class Frame extends JFrame{
 		yearText = new JTextField(10);
 		localText = new JTextField(15);
 		
-		
+	
 		JButton btn1 = new JButton("확인");
 		
 		inputPanel.add(yearTextLabel);
@@ -57,8 +57,15 @@ public class Frame extends JFrame{
 			
 			String year = yearText.getText();
 			String local = localText.getText();
-			//String result = Main.getDustDate(year);
-			String result =  DistrictMain.getDustDate(year, local);
+							
+			String result = "";
+			if (local.equals("")) { 
+				result = Main.getDustDate(year);
+				
+			}else {
+				result = DistrictMain.getDustDate(year, local);
+				
+			}
 			fineDustText.setText(result);
 					
 		});
