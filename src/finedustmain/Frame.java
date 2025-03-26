@@ -34,16 +34,16 @@ public class Frame extends JFrame{
 		yearText = new JTextField(10);
 		localText = new JTextField(15);
 		
-		//JButton btn1 = new JButton("확인");
-		JButton btn2 = new JButton("확인");
+		
+		JButton btn1 = new JButton("확인");
 		
 		inputPanel.add(yearTextLabel);
 		inputPanel.add(yearText);	
-		//inputPanel.add(btn1);
+		
 		
 		inputPanel.add(localTexttLabel);
 		inputPanel.add(localText);
-		inputPanel.add(btn2);
+		inputPanel.add(btn1);
 		
 		fineDustText = new JTextArea();
 		fineDustText.setEditable(false);
@@ -53,7 +53,7 @@ public class Frame extends JFrame{
 		add(inputPanel, BorderLayout.NORTH);
 		add(scrollPane, BorderLayout.CENTER);
 			
-		btn2.addActionListener(e -> {
+		btn1.addActionListener(e -> {
 			
 			String year = yearText.getText();
 			String local = localText.getText();
