@@ -60,9 +60,8 @@ public class WeatherMain extends JFrame {
 		btn.addActionListener(e -> { // 버튼 클릭 처리
 			String city = cityTextField.getText();
 			int city2 = cityTextField.getText();
-			
-			String result = getWeatherDate(city);
-			wheatherTextArea.setText(result);
+
+
 		});
 	}
 
