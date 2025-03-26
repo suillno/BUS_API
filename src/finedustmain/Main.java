@@ -21,10 +21,8 @@ public class Main extends JFrame {
 	private static final String API_KEY = "dfkqgFHSVFefp3CpeXZ5psT9s6iWXzaWacsy9b%2FgDvuEJpzyy9Vpah1z2ktIKXO85kIcRQAGZwdqUjUDbD6dkg%3D%3D";
 	private static final String BASE_URL = "https://apis.data.go.kr/B552584/UlfptcaAlarmInqireSvc/getUlfptcaAlarmInfo";
 	
-	private JTextField yearText;
-	private JTextArea fineDustText;
 	
-	public static String getDustDate(int year) {
+	public static String getDustDate(String year) {
 		String urlstr = BASE_URL + "?serviceKey=" + API_KEY + "&returnType=json&numOfRows=1&pageNo=1&year=" + year;
 				System.out.println(urlstr);
 		try {
@@ -83,7 +81,6 @@ public class Main extends JFrame {
 	
 	public static void main(String[] args) {
 		
-		System.out.println(Main.getDustDate(2024));
 	}
 
 }
