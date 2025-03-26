@@ -2,9 +2,6 @@ package finedustmain;
 
 import java.awt.BorderLayout;
 import java.io.UnsupportedEncodingException;
-import java.net.URLDecoder;
-import java.net.URLEncoder;
-
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -16,75 +13,66 @@ import javax.swing.SwingUtilities;
 
 public class Frame extends JFrame{
 
-	
 	private JTextField yearText;
+	private JTextField localText;
 	private JTextArea fineDustText;
 	
 	public Frame() {
-		
-		
-		
+				
 		setTitle("미세먼지 정보");
-		setSize(600, 300);
+		
+		setSize(700, 400);
+		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setLayout(new BorderLayout());
 		
 		JPanel inputPanel = new JPanel();
 		
-		JLabel yearTextLabel = new JLabel("연도명 : "); 
-		yearText = new JTextField(20);
+		JLabel yearTextLabel = new JLabel("연 도(2018 ~ 2025) : "); 		
+		JLabel localTexttLabel = new JLabel("     지역명 : "); 
+		
+		yearText = new JTextField(10);
+		localText = new JTextField(15);
+		
 		
 		JButton btn1 = new JButton("확인");
 		
 		inputPanel.add(yearTextLabel);
-		inputPanel.add(yearText);
+		inputPanel.add(yearText);	
+		
+		
+		inputPanel.add(localTexttLabel);
+		inputPanel.add(localText);
 		inputPanel.add(btn1);
 		
 		fineDustText = new JTextArea();
 		fineDustText.setEditable(false);
 		
 		JScrollPane scrollPane = new JScrollPane(fineDustText);
-		
+
 		add(inputPanel, BorderLayout.NORTH);
 		add(scrollPane, BorderLayout.CENTER);
-		
+			
 		btn1.addActionListener(e -> {
-			System.out.println("버튼 확인");
+			
 			String year = yearText.getText();
-			String result = Main.getDustDate(year);
+			String local = localText.getText();
+			//String result = Main.getDustDate(year);
+			String result =  DistrictMain.getDustDate(year, local);
 			fineDustText.setText(result);
-			
-			
+					
 		});
-		
-		
-		
+				
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	public static void main(String[] args) throws UnsupportedEncodingException {
-		// TODO Auto-generated method stub
 		
+	public static void main(String[] args) throws UnsupportedEncodingException {
+			
 		SwingUtilities.invokeLater(() -> {
 			
 			Frame frame = new Frame();
 			frame.setVisible(true);
 			
 		});
-
-		
-		
-
 	}
 
 }
