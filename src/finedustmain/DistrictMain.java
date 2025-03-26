@@ -60,13 +60,13 @@ public class DistrictMain {
 				JSONObject responseObj = obj.getJSONObject("response");
 				JSONObject bodyObj = responseObj.getJSONObject("body");
 				JSONArray itemsArray = bodyObj.getJSONArray("items");
-				System.out.println(itemsArray);
 				
 				// JitemsArray의 각 요소를 순회하며, district가 일치하면 FineDustData 객체에 값 저장 후 리스트에 추가
 				// 이후 해당 값을 list에 저장
 				for(int i = 0; i < itemsArray.length(); i++) {
 				String districtName = itemsArray.getJSONObject(i).getString("districtName");
 				String issueGbn = itemsArray.getJSONObject(i).getString("issueGbn");
+				String issueTime = itemsArray.getJSONObject(i).getString("issueTime");
 				String issueDate = itemsArray.getJSONObject(i).getString("issueDate");
 				String clearTime = itemsArray.getJSONObject(i).getString("clearTime");
 				double issueVale = itemsArray.getJSONObject(i).getDouble("issueVal");
@@ -75,6 +75,7 @@ public class DistrictMain {
 				FineDustData dustData = new FineDustData();
 				dustData.setDistrictName(districtName);
 				dustData.setIssueGbn(issueGbn);
+				dustData.setIssueTime(issueTime);
 				dustData.setIssueDate(issueDate);
 				dustData.setClearTime(clearTime);
 				dustData.setIssueVale(issueVale);
