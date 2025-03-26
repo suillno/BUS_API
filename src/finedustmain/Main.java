@@ -1,4 +1,4 @@
-package finedust;
+package finedustmain;
 
 import javax.swing.JFrame;
 
