@@ -5,7 +5,7 @@ public class FineDustData {
 	public String clearTime; // 경보해제일
 	public String issueGbn; // 경보명
 	public String districtName; // 지역
-	public int issueVale; // 오염등급
+	public double issueVale; // 오염등급
 	public String getIssueDate() {
 		return issueDate;
 	}
@@ -30,10 +30,10 @@ public class FineDustData {
 	public void setDistrictName(String districtName) {
 		this.districtName = districtName;
 	}
-	public int getIssueVale() {
+	public double getIssueVale() {
 		return issueVale;
 	}
-	public void setIssueVale(int issueVale) {
+	public void setIssueVale(double issueVale) {
 		this.issueVale = issueVale;
 	}
 	public FineDustData() {
@@ -49,8 +49,8 @@ public class FineDustData {
 	}
 	@Override
 	public String toString() {
-		return "FineDustData [issueDate=" + issueDate + ", clearTime=" + clearTime + ", issueGbn=" + issueGbn
-				+ ", districtName=" + districtName + ", issueVale=" + issueVale + "]";
+		return "미세먼지정보 \n[경보발생일 : " + issueDate + "\n 경보해제일 : " + clearTime + "\n 경보명 : " + issueGbn
+				+ "\n 지역 : " + districtName + "\n 오염등급 : " + issueVale + "]";
 	}
 	
 	
