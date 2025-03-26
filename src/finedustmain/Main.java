@@ -6,6 +6,8 @@ import javax.swing.JTextField;
 
 public class Main extends JFrame {
 
+	// 예시 
+	// https://apis.data.go.kr/B552584/UlfptcaAlarmInqireSvc/getUlfptcaAlarmInfo?serviceKey=dfkqgFHSVFefp3CpeXZ5psT9s6iWXzaWacsy9b%2FgDvuEJpzyy9Vpah1z2ktIKXO85kIcRQAGZwdqUjUDbD6dkg%3D%3D&returnType=json&numOfRows=100&pageNo=1&year=2020&itemCode=PM10
 	private static final String API_KEY = "dfkqgFHSVFefp3CpeXZ5psT9s6iWXzaWacsy9b%2FgDvuEJpzyy9Vpah1z2ktIKXO85kIcRQAGZwdqUjUDbD6dkg%3D%3D";
 	private static final String BASE_URL = "https://apis.data.go.kr/B552584/UlfptcaAlarmInqireSvc/getUlfptcaAlarmInfo";
 	
